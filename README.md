@@ -1,22 +1,40 @@
-This is a library for the Adafruit RGB 16x2 LCD Shield 
+This is a fork of JeeLab's fantastic real time clock library for Arduino.
 
-Pick one up at the Adafruit shop!
-  ---------> http://http://www.adafruit.com/products/714
+For details on using this library with an RTC module like the DS1307, see the guide at: https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/overview
 
-This new Adafruit shield makes it easy to use a 16x2 Character LCD. We really like the range of LCDs we stock in the shop, such as our classic <a href="http://www.adafruit.com/products/181">blue & white</a> as well as the fancy <a href="http://www.adafruit.com/products/399">RGB negative</a> and <a href="http://www.adafruit.com/products/398">RGB positive</a>. Unfortunately, these LCDs do require quite a few digital pins, 6 to control the LCD and then perhaps another 3 to control the RGB backlight for a total of 9 pins. That's half of the pins available on a classic Arduino! 
+To download. click the DOWNLOADS button to the right, and rename the uncompressed folder RTClib.
 
-With this in mind, we wanted to make it easier for people to get these LCD into their projects so we devised a shield that lets you control <b>a 16x2 Character LCD, up to 3 backlight pins AND 5 keypad pins using only the two I2C pins on the Arduino!</b> The best part is you don't really lose those two pins either, since you can stick i2c-based sensors, RTCs, etc and have them share the I2C bus. This is a super slick way to add a display without all the wiring hassle.
+Place the RTClib folder in your *arduinosketchfolder*/libraries/ folder. 
+You may need to create the libraries subfolder if its your first library. Restart the IDE.
 
-<hr>
+<!-- START COMPATIBILITY TABLE -->
 
-Adafruit invests time and resources providing this open source code, 
-please support Adafruit and open-source hardware by purchasing 
-products from Adafruit!
+## Compatibility
 
-Written by Limor Fried/Ladyada  for Adafruit Industries.  
-BSD license, check license.txt for more information
-All text above must be included in any redistribution
+MCU                | Tested Works | Doesn't Work | Not Tested  | Notes
+------------------ | :----------: | :----------: | :---------: | -----
+Atmega328 @ 16MHz  |      X       |             |            | 
+Atmega328 @ 12MHz  |      X       |             |            | 
+Atmega32u4 @ 16MHz |      X       |             |            | Use SDA/SCL on pins D3 &amp; D2
+Atmega32u4 @ 8MHz  |      X       |             |            | Use SDA/SCL on pins D3 &amp; D2
+ESP8266            |      X       |             |            | SDA/SCL default to pins 4 &amp; 5 but any two pins can be assigned as SDA/SCL using Wire.begin(SDA,SCL)
+Atmega2560 @ 16MHz |      X       |             |            | Use SDA/SCL on Pins 20 &amp; 21
+ATSAM3X8E          |      X       |             |            | Use SDA1 and SCL1
+ATSAM21D           |      X       |             |            | 
+ATtiny85 @ 16MHz   |      X       |             |            | 
+ATtiny85 @ 8MHz    |      X       |             |            | 
+Intel Curie @ 32MHz |             |             |     X       | 
+STM32F2            |             |             |     X       | 
 
-To download. click the DOWNLOADS button in the top right corner, rename the uncompressed folder Adafruit_RGBLCDShield. Check that the Adafruit_RGBLCDShield folder contains Adafruit_RGBLCDShield.cpp and Adafruit_RGBLCDShield.h
+  * ATmega328 @ 16MHz : Arduino UNO, Adafruit Pro Trinket 5V, Adafruit Metro 328, Adafruit Metro Mini
+  * ATmega328 @ 12MHz : Adafruit Pro Trinket 3V
+  * ATmega32u4 @ 16MHz : Arduino Leonardo, Arduino Micro, Arduino Yun, Teensy 2.0
+  * ATmega32u4 @ 8MHz : Adafruit Flora, Bluefruit Micro
+  * ESP8266 : Adafruit Huzzah
+  * ATmega2560 @ 16MHz : Arduino Mega
+  * ATSAM3X8E : Arduino Due
+  * ATSAM21D : Arduino Zero, M0 Pro
+  * ATtiny85 @ 16MHz : Adafruit Trinket 5V
+  * ATtiny85 @ 8MHz : Adafruit Gemma, Arduino Gemma, Adafruit Trinket 3V
 
-Place the Adafruit_RGBLCDShield library folder your <arduinosketchfolder>/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE.
+<!-- END COMPATIBILITY TABLE -->
